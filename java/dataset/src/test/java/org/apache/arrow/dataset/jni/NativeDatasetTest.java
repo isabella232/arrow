@@ -144,7 +144,7 @@ public class NativeDatasetTest {
       Assert.assertEquals(100, vsr.getRowCount());
 
       // check if projector is applied
-      Assert.assertEquals("Schema<id: Int(32, true), title: Int(32, true)[dictionary: 0]>",
+      Assert.assertEquals("Schema<id: Int(32, true), title: title: Utf8>",
           vsr.getSchema().toString());
     }
     Assert.assertEquals(10, vsrCount);
@@ -198,11 +198,11 @@ public class NativeDatasetTest {
       rowCount += vsr.getRowCount();
 
       // check if projector is applied
-      Assert.assertEquals("Schema<id: Int(32, true), title: Int(32, true)[dictionary: 0]>",
+      Assert.assertEquals("Schema<id: Int(32, true), title: Utf8>",
           vsr.getSchema().toString());
 
       // dictionaries
-      Assert.assertEquals(1, dvs.size());
+      Assert.assertEquals(0, dvs.size());
     }
     Assert.assertEquals(1000, rowCount);
 
